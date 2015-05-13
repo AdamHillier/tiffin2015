@@ -1,0 +1,14 @@
+public/*
+
+# Dependencies
+bower_components
+node_modules
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed

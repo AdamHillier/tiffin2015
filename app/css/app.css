@@ -1,0 +1,121 @@
+html {
+    min-height: 29em;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.center-bottom {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+}
+#login {
+    width: 90%;
+    max-width: 22.5em;
+    text-align: center;
+}
+#footer {
+    font-size: 0.75em;
+    color: #AAA;
+    text-align: center;
+}
+#loading-bar .bar {
+    background: rgb(186, 38, 118);
+}
+#loading-bar .peg {
+  -moz-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
+  -ms-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
+  -webkit-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
+  box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
+}
+#loading-bar-spinner .spinner-icon {
+    border-top-color: rgb(186, 38, 118);
+    border-left-color: rgb(186, 38, 118);
+}
+#header {
+    position: fixed;
+    top: 0em;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0em 0em 0.5em #888;
+    z-index: 1;
+}
+#nav {
+    position: relative;
+    top: 0em;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+}
+.pure-menu-active > a.pure-menu-link {
+    color: #FFF;
+    background-color: rgb(186, 38, 118);
+}
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #DDD;
+    z-index: -1;
+}
+#main {
+    position: relative;
+    top: 2.125em;
+    max-width: 62.5em;
+    margin: 0 auto;
+}
+#video-container {
+    display: block;
+    margin: auto;
+    width: 29em;
+    padding: 1em 0;
+}
+@media (min-width: 58em) {
+    #video-container {
+        width: 58em;
+    }
+}
+.card {
+    display: inline-block;
+    vertical-align: top;
+    width: 27em;
+    height: 18.1875em;
+    margin: 1em;
+    box-shadow: 0em 0em 1em #888;
+    background-color: #FFF;
+}
+.card-image {
+    height: 10em;
+    width: 10em;
+}
+.video {
+    width: 27em;
+    height: 15.1875em;
+    display: block;
+    padding: 0;
+    overflow: none;
+    border: 0;
+}
+.video-name {
+    text-align: center;
+    font-size: 2em;
+    margin: 0.15em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    color: #777;
+}

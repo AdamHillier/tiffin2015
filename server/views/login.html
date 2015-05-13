@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Tiffin School Leavers 2015</title>
+  <link rel='stylesheet' href='/app.min.css'>
+</head>
+<body>
+  <div id='login' class='center'>
+    {{#error}}
+      <p>{{{ error }}}</p>
+    {{/error}}
+    {{^error}}
+      <p>Access is restricted to former students of Tiffin School who left in the summer of 2015.</p>
+      <a class='pure-button pure-button-primary pure-button-xlarge' href='/login/facebook'>Login with Facebook</a>
+    {{/error}}
+  </div>
+  <div id='footer' class='center-bottom'>
+    <p>This website uses cookies for authentication and to track login sessions.</p>
+  </div>
+</body>
+</html>

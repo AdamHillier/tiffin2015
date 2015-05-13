@@ -1,0 +1,6 @@
+<div id='video-container'>
+    <div class='card' ng-repeat='video in videos.videos'>
+        <iframe class='video' ng-src='{{ video.url }}' allowfullscreen></iframe>
+        <p class='video-name'>{{ video.form }}</p>
+    </div>
+</div>
