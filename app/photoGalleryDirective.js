@@ -39,11 +39,11 @@ angular.module('tiffin2015').directive('tifPhotoGallery', ['ContentService', '$w
             scope.$watch('photos', function (values) {
                 photos = values.photos;
                 photoElements = element.children();
-                adjustHeights(element[0].clientWidth);
+                adjustHeights(element[0].clientWidth - 1);
             });
 
             angular.element($window).bind('resize', function () {
-                adjustHeights(element[0].clientWidth);
+                adjustHeights(element[0].clientWidth - 1);
             });
         }
     };
