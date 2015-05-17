@@ -2,7 +2,10 @@ var mongoose = require('mongoose');
 
 var photoSchema = new mongoose.Schema({
     file: { type: String, required: true },
-    year: { type: String, required: true }, // 7, 8, 9 ... L6, U6
+    date: { type: Date, required: true },
+    width: { type: Number, required: true },
+    height: { type: Number, required: true },
+    thumbAspectRatio: { type: Number, required: true },
     caption: { type: String }
 });
 

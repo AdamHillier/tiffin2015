@@ -11,14 +11,30 @@ angular.module('tiffin2015', ['ui.router', 'ngAnimate', 'angular-loading-bar', '
         })
         .state('photos', {
             url: '/photos',
-            templateUrl: 'partials/photos.html',
+            abstract: true,
+            template: '<ui-view/>',
             resolve: {
                 photos: ['ContentService', function (contentService) {
                     return contentService.getPhotos();
                 }]
             },
+        })
+        .state('photos.gallery', {
+            url: '',
+            templateUrl: 'partials/photos.html',
             controller: 'PhotosController',
             controllerAs: 'photos'
+        })
+        .state('photos.photo', {
+            url: '/:photoFile',
+            templateUrl: 'partials/photo.html',
+            resolve: {
+                photo: ['ContentService', '$stateParams', function (contentService, $stateParams) {
+                    return contentService.getPhoto($stateParams.photoFile);
+                }]
+            },
+            controller: 'PhotoController',
+            controllerAs: 'photo'
         })
         .state('videos', {
             url: '/videos',
@@ -43,7 +59,7 @@ angular.module('tiffin2015', ['ui.router', 'ngAnimate', 'angular-loading-bar', '
             controllerAs: 'forms'
         });
 
-    cfpLoadingBarProvider.latencyThreshold = 100;
+    cfpLoadingBarProvider.latencyThreshold = 50;
     cfpLoadingBarProvider.includeSpinner = false;
 
     ngDialogProvider.setDefaults({

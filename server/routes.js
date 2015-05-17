@@ -21,6 +21,8 @@ module.exports = function (app) {
         res.redirect('/');
     });
     app.get('/photos', isAuthorised, controller.getPhotos);
+    app.get('/photos/:photo', isAuthorised, controller.getPhoto);
+    app.get('/photos/:photo/thumb', isAuthorised, controller.getPhotoThumb)
     app.get('/videos', isAuthorised, controller.getVideos);
     app.get('/forms', isAuthorised, controller.getForms);
 }

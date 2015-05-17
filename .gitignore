@@ -1,4 +1,6 @@
-public/*
+public/**/*
+server/config/**/*
+photos/**/*.jpg
 
 # Dependencies
 bower_components

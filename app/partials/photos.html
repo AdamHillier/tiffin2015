@@ -1,3 +1,4 @@
-<p>
-  Photos content will be here.
-</p>
+<div id='photo-gallery' tif-photo-gallery>
+    <img class='photo' ng-repeat='photo in photos.photos' ng-src='{{ "/photos/" + photo.file + "/thumb" }}' ng-click='photos.open(photo.file)'/>
+</div>
+<ui-view></ui-view>

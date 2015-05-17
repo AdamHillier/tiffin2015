@@ -1,6 +1,3 @@
-html {
-    min-height: 29em;
-}
 .center {
     position: absolute;
     top: 50%;
@@ -26,6 +23,10 @@ html {
     max-width: 22.5em;
     text-align: center;
 }
+.pure-button.pure-button-primary {
+    margin: 1em;
+    background-color: rgb(186, 38, 118);
+}
 #footer {
     font-size: 0.75em;
     color: #AAA;
@@ -35,9 +36,6 @@ html {
     background: rgb(186, 38, 118);
 }
 #loading-bar .peg {
-  -moz-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
-  -ms-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
-  -webkit-box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
   box-shadow: rgb(186, 38, 118) 1px 0 6px 1px;
 }
 #loading-bar-spinner .spinner-icon {
@@ -74,20 +72,50 @@ html {
     z-index: -1;
 }
 #main {
-    position: relative;
-    top: 2.125em;
-    max-width: 62.5em;
     margin: 0 auto;
+    margin-top: 2.125em;
+}
+#photo-gallery {
+    font-size: 0;
+    padding: 2rem 0;
+    margin: 0 2rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.photo {
+    display: inline-block;
+    height: 220px;
+    margin: 3px;
+    cursor: pointer;
+}
+.photo:hover {
+    box-shadow: 0em 0em 1rem #333;
+}
+#photo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2.125em;
+    bottom: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 #video-container {
     display: block;
     margin: auto;
     width: 29em;
-    padding: 1em 0;
+    padding: 1em;
 }
-@media (min-width: 58em) {
+@media (min-width: 60em) {
     #video-container {
         width: 58em;
+    }
+}
+@media (min-width: 89em) {
+    #video-container {
+        width: 87em;
     }
 }
 .card {
@@ -98,10 +126,6 @@ html {
     margin: 1em;
     box-shadow: 0em 0em 1em #888;
     background-color: #FFF;
-}
-.card-image {
-    height: 10em;
-    width: 10em;
 }
 .video {
     width: 27em;
@@ -114,8 +138,9 @@ html {
 .video-name {
     text-align: center;
     font-size: 2em;
-    margin: 0.15em;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    color: #777;
+    margin: 0.125em;
+    font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 600;
+    font-stretch: normal;
+    color: rgb(186, 38, 118);
 }
