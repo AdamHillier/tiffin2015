@@ -1,6 +1,8 @@
 public/**/*
 server/config/**/*
 photos/**/*.jpg
+data/*.pdf
+data/*.epub
 
 # Dependencies
 bower_components

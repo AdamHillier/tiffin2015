@@ -179,7 +179,43 @@ module.exports = function(grunt) {
         });
     });
 
+    grunt.registerTask('copyYearbook', function () {
+        var done = this.async();
+        var fs = require('fs');
+        var path = require('path');
+
+        var files = ['yearbook.pdf', 'yearbook-published.pdf', 'yearbook-qa.pdf', 'yearbook.epub'];
+
+        function streamCopy(source, target, done) {
+            grunt.log.writeln('Copying ' + source + ' to ' + target);
+            var rs = fs.createReadStream(source);
+            rs.on('error', function (err) {
+                throw err;
+            });
+            var ws = fs.createWriteStream(target);
+            ws.on('error', function (err) {
+                throw err;
+            });
+            ws.on('close', function () {
+                done()
+            });
+            rs.pipe(ws);
+        }
+
+        var count = 0;
+        function callback() {
+            count++;
+            if (count === files.length) {
+                done();
+            }
+        }
+
+        for (var i = 0; i < files.length; i++) {
+            streamCopy(path.join('data', files[i]), path.join('public', files[i]), callback);
+        }
+    });
+
     grunt.registerTask('default',
-            ['populateDb', 'clean:all', 'concat', 'htmlmin', 'cssmin', 'uglify', 'concurrent']);
+            ['populateDb', 'clean:all', 'copyYearbook', 'concat', 'htmlmin', 'cssmin', 'uglify', 'concurrent']);
 
 };

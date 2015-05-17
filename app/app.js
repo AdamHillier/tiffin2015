@@ -1,8 +1,9 @@
 'use strict';
 angular.module('tiffin2015', ['ui.router', 'ngAnimate', 'angular-loading-bar', 'ngDialog'])
-        .config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', 'ngDialogProvider',
-                function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider, ngDialogProvider) {
+        .config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', 'ngDialogProvider', '$compileProvider',
+                function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider, ngDialogProvider, $compileProvider) {
     //$locationProvider.html5Mode({ enabled: true, requireBase: false }).hashPrefix('!');
+    $compileProvider.debugInfoEnabled(false);
     $urlRouterProvider.otherwise('/yearbook');
     $stateProvider
         .state('yearbook', {

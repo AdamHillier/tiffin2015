@@ -30,6 +30,3 @@ exports.getVideos = function (req, res) {
         res.send(videos);
     });
 }
-exports.download = function (req, res) {
-
-}

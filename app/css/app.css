@@ -75,6 +75,27 @@
     margin: 0 auto;
     margin-top: 2.125em;
 }
+#yearbook-wrapper {
+    position: relative;
+    top: 2em;
+    width: 30em;
+    padding: 1em 2em;
+    margin: auto;
+    background-color: #FFF;
+}
+@media (max-width: 38em) {
+    #yearbook-wrapper {
+        width: calc(100% - 8em);
+        margin: auto;
+    }
+}
+.links {
+    text-align: center;
+}
+.links > a.pure-button {
+    margin: 0;
+    margin-bottom: 0.35em;
+}
 #photo-gallery {
     font-size: 0;
     padding: 2rem 0;
@@ -137,9 +158,6 @@
 @media (max-width: 31em) {
     #video-container, .card {
         width: calc(100% - 2em);
-    }
-    .video {
-        height: calc();
     }
 }
 .video-name {

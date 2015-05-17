@@ -31,6 +31,13 @@ app.set('view engine', 'html');
 app.set('layout', 'layouts/default');
 require('./routes')(app);
 app.use(express.static(__dirname + '/../public'));
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+app.use(function (req, res, next) {
+    res.status(404).send('Sorry cant find that!');
+});
 
 // throw err if no connection?
 mongoose.connect(database.url);
