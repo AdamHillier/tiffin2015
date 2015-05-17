@@ -36,6 +36,10 @@ angular.module('tiffin2015').service('ContentService', ['$http', '$q', function 
             if (!videos) {
                 videos = $http.get(URL + '/videos')
                 .then(function (data) {
+                    /*data.data.sort(function (a, b) {
+                        if (a.form < b.form) { return 1; }
+                        return -1;
+                    });*/
                     return data.data;
                 }, function (data, status, headers) {
                     console.log('An error occured.');
@@ -43,16 +47,5 @@ angular.module('tiffin2015').service('ContentService', ['$http', '$q', function 
                 });
             }
             return videos;
-        }
-        this.getForms = function () {
-            if (!forms) {
-                forms = $http.get(URL + '/forms').success(function (data) {
-                    return data.data;
-                }).error(function (data, status, headers) {
-                    console.log('An error occured.');
-                    return new Error('An error occurred.');
-                });
-            }
-            return forms;
         }
     }]);

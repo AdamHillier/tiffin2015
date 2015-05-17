@@ -46,17 +46,6 @@ angular.module('tiffin2015', ['ui.router', 'ngAnimate', 'angular-loading-bar', '
             },
             controller: 'VideosController',
             controllerAs: 'videos'
-        })
-        .state('forms', {
-            url: '/forms',
-            templateUrl: 'partials/forms.html',
-            resolve: {
-                forms: ['ContentService', function (contentService) {
-                    return contentService.getForms();
-                }]
-            },
-            controller: 'FormsController',
-            controllerAs: 'forms'
         });
 
     cfpLoadingBarProvider.latencyThreshold = 50;

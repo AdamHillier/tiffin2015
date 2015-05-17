@@ -1,6 +1,5 @@
 var Photo = require('./models/photo');
 var Video = require('./models/video');
-var Form = require('./models/form');
 var path = require('path');
 
 exports.getPhotos = function (req, res) {
@@ -29,12 +28,6 @@ exports.getVideos = function (req, res) {
     Video.find({}, 'form youtubeCode -_id', function (err, videos) {
         if (err) { return res.status(500).send('Internal error'); }
         res.send(videos);
-    });
-}
-exports.getForms = function (req, res) {
-    Form.find({}, 'name tutor tutorText tutorTextAuthor studentText studentTextAuthor -_id', function (err, forms) {
-        if (err) { return res.status(500).send('Internal error'); }
-        res.send(forms);
     });
 }
 exports.download = function (req, res) {

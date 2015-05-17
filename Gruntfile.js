@@ -144,7 +144,7 @@ module.exports = function(grunt) {
     }
 
     /*
-    ** Will delete existing forms and videos, replacing them with the contents of the JSON
+    ** Will delete existing videos, replacing them with the contents of the JSON
     ** files in /data, but will *add* photos (existing photos are not deleted).
     */
     grunt.registerTask('populateDb', function () {
@@ -153,19 +153,17 @@ module.exports = function(grunt) {
         var mongoose = require('mongoose');
         var Photo = require('./server/models/photo');
         var Video = require('./server/models/video');
-        var Form = require('./server/models/form');
 
         var videos = require('./data/videos');
-        var forms = require('./data/forms');
 
         processImages(function (photos) {
             mongoose.connect(require('./server/config/database').url);
             mongoose.connection.once('open', function () {
                 grunt.log.writeln('Database connected');
-                Promise.all([Video.remove({}).exec(), Form.remove({}).exec()])
+                Video.remove({}).exec()
                     .then(function () {
                         grunt.log.writeln('Collections emptied');
-                        Promise.all([Photo.create(photos), Video.create(videos), Form.create(forms)])
+                        Promise.all([Photo.create(photos), Video.create(videos)])
                             .then(function () {
                                 grunt.log.writeln('Collections populated');
                                 done();
