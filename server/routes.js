@@ -22,6 +22,7 @@ module.exports = function (app) {
     });
     app.get('/photos', isAuthorised, controller.getPhotos);
     app.get('/photos/:photo', isAuthorised, controller.getPhoto);
-    app.get('/photos/:photo/thumb', isAuthorised, controller.getPhotoThumb)
+    app.get('/photos/:photo/thumb', isAuthorised, controller.getPhotoThumb);
+    app.get('/photos/:photo/download', isAuthorised, controller.downloadPhoto);
     app.get('/videos', isAuthorised, controller.getVideos);
 }

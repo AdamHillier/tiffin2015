@@ -24,6 +24,14 @@ exports.getPhotoThumb = function (req, res) {
         res.status(404).send('404');
     }
 }
+exports.downloadPhoto = function (req, res) {
+    var file = req.params.photo;
+    try {
+        res.download(path.join(__dirname, '/../photos', file));
+    } catch (err) {
+        res.status(404).send('404');
+    }
+}
 exports.getVideos = function (req, res) {
     Video.find({}, 'form youtubeCode -_id', function (err, videos) {
         if (err) { return res.status(500).send('Internal error'); }

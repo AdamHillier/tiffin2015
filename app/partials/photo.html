@@ -1,2 +1,5 @@
 <div id='photo' ng-style='{"background-image":"url({{ "/photos/" + photo.file }})"}'/>
-<a class='pure-button pure-button-primary pure-button-xlarge' ui-sref='photos.gallery'>Back</a>
+<div class='photo-links'>
+  <a class='pure-button pure-button-primary pure-button-xlarge' ui-sref='photos.gallery'>Back</a>
+  <a class='pure-button pure-button-primary pure-button-xlarge' ng-href='{{ "/photos/" + photo.file + "/download"}}'>Download</a>
+</div>
